@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: customize
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jackson:
+    default-property-inclusion: non_empty
+  sql:
+    init:
+      mode: embedded
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+      encoding: utf-8
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+server:
+  port: 8080
+
+# MyBatis
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+# actuator
+# sample??????????beans???????
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,beans,env

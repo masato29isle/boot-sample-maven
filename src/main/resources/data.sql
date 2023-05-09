@@ -1,0 +1,2 @@
+INSERT INTO orders (order_id, item_name, price, user_name, create_time) values ( 1, 'pen', 100, 'John', CURRENT_TIMESTAMP);
+INSERT INTO orders (order_id, item_name, price, user_name, create_time) values ( 2, 'bike', 10000, 'Mike', CURRENT_TIMESTAMP);
